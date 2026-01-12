@@ -756,6 +756,32 @@ main {
   transform: scale(1.15);
 }
 
+/* Add small gradient underline under the Skills section title */
+.skills-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, #ffd700, #ffcc00);
+  margin-top: 8px;
+  border-radius: 1px;
+}
+
+/* Tools title underline and spacing */
+.tools-title {
+  margin-top: 2px; /* move title upward slightly */
+  margin-bottom: 18px; /* push icons down so title isn't too close */
+}
+.tools-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, #ffd700, #ffcc00);
+  margin: 8px auto 0; /* center underline under title */
+  border-radius: 1px;
+}
+
 /* Continuous scrolling keyframes */
 @keyframes scroll {
   0% {
