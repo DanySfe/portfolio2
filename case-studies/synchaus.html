@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYNCHAUS - Universal Smart Home Platform</title>
+
+    <link rel="shortcut icon" href="../assets/images/Danial-Safaei.png" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Kodchasan:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --primary-blue: #4E6BE7;
+            --accent-red: #FF3D3D;
+            --success-green: #00C48C;
+            --warning-yellow: #FECF29;
+            --glass-bg: rgba(26, 26, 26, 0.6);
+            --card-border: rgba(255, 255, 255, 0.05);
+        }
+
+        .case-study-content {
+            color: var(--light-gray);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .rich-section {
+            padding: 60px 0;
+        }
+
+        .rich-section-title-box {
+            display: inline-block;
+            margin-bottom: 24px;
+            padding: 8px 16px;
+            background: rgba(78, 107, 231, 0.1);
+            border-radius: 50px;
+            border: 1px solid rgba(78, 107, 231, 0.2);
+        }
+
+        .rich-section-title-box p {
+            color: var(--primary-blue);
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .rich-h2 {
+            font-family: 'Kodchasan', sans-serif;
+            font-weight: 700;
+            font-size: 42px;
+            color: white;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .rich-p-large {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 800px;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        /* Hero Styling */
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            min-height: 70vh;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 20px;
+            background: linear-gradient(to right, rgba(78, 107, 231, 0.1), transparent);
+            border: 1px solid rgba(78, 107, 231, 0.3);
+            border-radius: 50px;
+            margin-bottom: 40px;
+        }
+
+        .hero-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .hero-dot::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+            opacity: 0.4;
+            animation: pulse-ring 2s infinite;
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(1);
+                opacity: 0.4;
+            }
+
+            50% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 0.4;
+            }
+        }
+
+        .hero-title {
+            font-family: 'Kodchasan', sans-serif;
+            font-weight: 700;
+            font-size: 80px;
+            line-height: 0.95;
+            margin-bottom: 24px;
+        }
+
+        .hero-title .sync {
+            background: linear-gradient(to right, #4E6BE7, #3A52C5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-family: 'Kodchasan', sans-serif;
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 24px;
+        }
+
+        .hero-mockup-wrapper {
+            position: relative;
+        }
+
+        .hero-glow {
+            position: absolute;
+            inset: -50px;
+            background: radial-gradient(circle, rgba(78, 107, 231, 0.2), transparent 70%);
+            filter: blur(50px);
+            z-index: 0;
+        }
+
+        .hero-mockup {
+            width: 100%;
+            max-width: 500px;
+            position: relative;
+            z-index: 1;
+            transition: transform 0.5s ease;
+        }
+
+        .hero-mockup:hover {
+            transform: scale(1.02);
+        }
+
+        .info-card-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 40px;
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+            border: 1px solid var(--card-border);
+            padding: 16px 32px;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            transition: border-color 0.3s ease;
+        }
+
+        .info-card:hover {
+            border-color: rgba(78, 107, 231, 0.5);
+        }
+
+        .info-card p:first-child {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 8px;
+        }
+
+        .info-card p:last-child {
+            font-family: 'Kodchasan', sans-serif;
+            font-weight: 600;
+            font-size: 18px;
+            color: white;
+        }
+
+        /* Problem & Solution Card Styling */
+        .prob-sol-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .rich-card {
+            background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
+            padding: 40px;
+            border-radius: 32px;
+            border: 1px solid var(--card-border);
+        }
+
+        .rich-card.problem {
+            border-color: rgba(255, 61, 61, 0.2);
+        }
+
+        .rich-card.solution {
+            border-color: rgba(0, 196, 140, 0.2);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .card-line {
+            width: 4px;
+            height: 32px;
+            border-radius: 4px;
+        }
+
+        .problem .card-line {
+            background: var(--accent-red);
+        }
+
+        .solution .card-line {
+            background: var(--success-green);
+        }
+
+        .rich-card h3 {
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .problem h3 {
+            color: var(--accent-red);
+        }
+
+        .solution h3 {
+            color: var(--success-green);
+        }
+
+        .bullet-list {
+            margin-top: 32px;
+            list-style: none;
+        }
+
+        .bullet-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.5;
+        }
+
+        .bullet-dot {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .problem .bullet-dot {
+            color: var(--accent-red);
+        }
+
+        .solution .bullet-dot {
+            color: var(--success-green);
+        }
+
+        /* App Screens Grid */
+        .screens-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .screen-item {
+            background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
+            padding: 24px;
+            border-radius: 24px;
+            border: 1px solid var(--card-border);
+            text-align: center;
+        }
+
+        .screen-img-container {
+            aspect-ratio: 9/19.5;
+            overflow: hidden;
+            border-radius: 16px;
+            background: black;
+            margin-bottom: 24px;
+        }
+
+        .screen-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .screen-item h4 {
+            font-family: 'Kodchasan', sans-serif;
+            font-size: 20px;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .screen-item p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+        }
+
+        /* Design Strategy Steps */
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .strategy-card {
+            background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
+            padding: 32px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Timeline Items */
+        .timeline-box {
+            background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
+            padding: 32px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin-bottom: 24px;
+        }
+
+        /* Research Charts */
+        .charts-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .chart-card {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 20px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        /* Persona Styling */
+        .persona-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 32px;
+        }
+
+        .persona-profile {
+            background: #111;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+
+        .persona-img {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .persona-details {
+            padding: 24px;
+        }
+
+        .persona-info-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .persona-info-row i {
+            color: var(--primary-blue);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+
+            .hero-container,
+            .prob-sol-grid,
+            .persona-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .screens-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .charts-row {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .strategy-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .screens-grid,
+            .charts-row,
+            .strategy-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-title {
+                font-size: 50px;
+            }
+        }
+    </style>
+</head>
+
+<body class="cyberpunk case-study-page">
+
+    <main>
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" data-sidebar>
+
+            <div class="sidebar-info">
+
+                <figure class="avatar-box">
+                    <img src="../images/NEXUX.png" alt="Danial Safaei" width="80">
+                </figure>
+
+                <div class="info-content">
+                    <h1 class="name" title="Danial safaei">Danial Safaei</h1>
+                    <p class="title">UX/UI designer</p>
+                </div>
+
+                <button class="info_more-btn" data-sidebar-btn>
+                    <span>Show Contacts</span>
+                    <ion-icon name="chevron-down"></ion-icon>
+                </button>
+
+            </div>
+
+            <div class="sidebar-info_more">
+
+                <div class="separator"></div>
+
+                <ul class="contacts-list">
+
+                    <li class="contact-item">
+                        <div class="icon-box">
+                            <ion-icon name="mail-outline"></ion-icon>
+                        </div>
+                        <div class="contact-info">
+                            <p class="contact-title">Email</p>
+                            <a href="mailto:dansfe83@gmail.com" class="contact-link">dansfe83@gmail.com</a>
+                        </div>
+                    </li>
+
+                    <li class="contact-item">
+                        <div class="icon-box">
+                            <ion-icon name="phone-portrait-outline"></ion-icon>
+                        </div>
+                        <div class="contact-info">
+                            <p class="contact-title">Phone</p>
+                            <a href="tel:+16478355652" class="contact-link">+1 (647) 835-5652</a>
+                        </div>
+                    </li>
+
+                    <li class="contact-item">
+                        <div class="icon-box">
+                            <ion-icon name="location-outline"></ion-icon>
+                        </div>
+                        <div class="contact-info">
+                            <p class="contact-title">Location</p>
+                            <a href="#" class="contact-link">Toronto, Ontario, Canada</a>
+                        </div>
+                    </li>
+
+                </ul>
+
+                <div class="separator"></div>
+
+                <ul class="social-list">
+                    <li class="social-item">
+                        <a href="https://www.linkedin.com/in/danial-safaei-313b45235/" class="social-link"
+                            target="_blank" rel="noopener noreferrer">
+                            <ion-icon name="logo-linkedin"></ion-icon>
+                        </a>
+                    </li>
+                    <li class="social-item">
+                        <a href="https://www.behance.net/danialsafaei" class="social-link" target="_blank"
+                            rel="noopener noreferrer">
+                            <ion-icon name="logo-Behance"></ion-icon>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </aside>
+
+        <div class="main-content">
+
+            <!-- NAVBAR -->
+            <nav class="navbar">
+                <ul class="navbar-list">
+                    <li class="navbar-item">
+                        <a href="../index.html" class="navbar-link">About</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="../index.html" class="navbar-link">Resume</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="../index.html" class="navbar-link active">Portfolio</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="../index.html" class="navbar-link">Contact</a>
+                    </li>
+                    <div id="theme-toggle" class="theme-toggle">
+                        <span class="toggle-thumb"></span>
+                    </div>
+                </ul>
+            </nav>
+
+            <!-- CASE STUDY ARTICLE -->
+            <article class="case-study active">
+
+                <header>
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <h2 class="h2 article-title">SYNCHAUS</h2>
+                        <a href="../index.html#portfolio" class="form-btn"
+                            style="padding: 10px 20px; border-radius: 10px; font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px;">
+                            <ion-icon name="arrow-back-outline"></ion-icon>
+                            Back to Projects
+                        </a>
+                    </div>
+                </header>
+
+                <div class="case-study-content">
+
+                    <!-- HERO SECTION -->
+                    <section class="rich-section" id="hero">
+                        <div class="hero-container">
+                            <div class="hero-text-block">
+                                <div class="hero-badge">
+                                    <div class="hero-dot"></div>
+                                    <span class="text-xs font-medium text-blue-500 uppercase tracking-widest"
+                                        style="color: #4E6BE7; font-size: 12px;">UX/UI Case Study</span>
+                                </div>
+                                <h1 class="hero-title">
+                                    <span class="sync">Sync</span>Haus
+                                </h1>
+                                <p class="hero-subtitle">Universal Smart Home Platform</p>
+                                <p class="rich-p-large">
+                                    A unified smart home control app that brings all your devices together—eliminating
+                                    the complexity of managing multiple apps.
+                                </p>
+
+                                <div class="info-card-grid">
+                                    <div class="info-card">
+                                        <p>Role</p>
+                                        <p>UX/UI Designer</p>
+                                    </div>
+                                    <div class="info-card">
+                                        <p>Timeline</p>
+                                        <p>Sep - Oct 2024</p>
+                                    </div>
+                                    <div class="info-card">
+                                        <p>Platform</p>
+                                        <p>Android/iOS</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hero-mockup-wrapper">
+                                <div class="hero-glow"></div>
+                                <img src="../assets/case-studies/synchaus/synchaus-hero.png" alt="SyncHaus App Mockup"
+                                    class="hero-mockup">
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- OVERVIEW SECTION -->
+                    <section class="rich-section" id="overview">
+                        <div class="rich-section-title-box">
+                            <p>Introduction</p>
+                        </div>
+                        <h2 class="rich-h2">About This Project</h2>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+                            <div>
+                                <p class="rich-p-large">
+                                    This project challenged me as a UX and UI Designer to craft an intuitive and
+                                    universal smart home platform that eliminates the complexity of managing multiple
+                                    apps. SyncHaus was built with the vision of merging simplicity, usability, and a
+                                    sleek, futuristic aesthetic for everyday smart living.
+                                </p>
+                                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+                                    <div
+                                        style="width: 48px; height: 4px; background: var(--primary-blue); border-radius: 2px;">
+                                    </div>
+                                    <p style="color: rgba(255,255,255,0.6);">Platform: <span
+                                            style="color: white; font-weight: 500;">Android/iOS</span></p>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 16px;">
+                                    <div
+                                        style="width: 48px; height: 4px; background: var(--primary-blue); border-radius: 2px;">
+                                    </div>
+                                    <p style="color: rgba(255,255,255,0.6);">Role: <span
+                                            style="color: white; font-weight: 500;">UX/UI Designer</span></p>
+                                </div>
+                            </div>
+                            <div style="position: relative;">
+                                <img src="../assets/case-studies/synchaus/synchaus-intro.png" alt="SyncHaus App"
+                                    style="width: 100%; border-radius: 40px; box-shadow: 0 30px 60px rgba(0,0,0,0.5);">
+                                <div
+                                    style="position: absolute; inset: 0; background: radial-gradient(circle, rgba(78, 107, 231, 0.15), transparent); filter: blur(40px); z-index: -1;">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- SCREENS SHOWCASE -->
+                    <section class="rich-section" id="screens">
+                        <div style="text-align: center; margin-bottom: 60px;">
+                            <h2 class="rich-h2">App Screens</h2>
+                            <p class="rich-p-large" style="margin: 0 auto;">Seamless control across all your smart home
+                                devices</p>
+                        </div>
+                        <div class="screens-grid">
+                            <div class="screen-item">
+                                <div class="screen-img-container">
+                                    <img src="../assets/case-studies/synchaus/synchaus-dashboard.png"
+                                        alt="Home Dashboard">
+                                </div>
+                                <h4>Home Dashboard</h4>
+                                <p>Quick access to all connected devices</p>
+                            </div>
+                            <div class="screen-item">
+                                <div class="screen-img-container">
+                                    <img src="../assets/case-studies/synchaus/synchaus-thermostat.png"
+                                        alt="Climate Control">
+                                </div>
+                                <h4>Climate Control</h4>
+                                <p>Intuitive temperature management</p>
+                            </div>
+                            <div class="screen-item">
+                                <div class="screen-img-container">
+                                    <img src="../assets/case-studies/synchaus/synchaus-bedroom.png"
+                                        alt="Bedroom Lights">
+                                </div>
+                                <h4>Bedroom Lights</h4>
+                                <p>Smart lighting controls</p>
+                            </div>
+                            <div class="screen-item">
+                                <div class="screen-img-container">
+                                    <img src="../assets/case-studies/synchaus/synchaus-lights.png"
+                                        alt="Lights Management">
+                                </div>
+                                <h4>Lights Management</h4>
+                                <p>Control all room lighting</p>
+                            </div>
+                            <div class="screen-item">
+                                <div class="screen-img-container">
+                                    <img src="../assets/case-studies/synchaus/synchaus-security.png"
+                                        alt="Security Center">
+                                </div>
+                                <h4>Security Center</h4>
+                                <p>Home security and monitoring</p>
+                            </div>
+                            <div class="screen-item">
+                                <div class="screen-img-container">
+                                    <img src="../assets/case-studies/synchaus/synchaus-login.png"
+                                        alt="User Authentication">
+                                </div>
+                                <h4>User Authentication</h4>
+                                <p>Secure login experience</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- PROBLEM & SOLUTION -->
+                    <section class="rich-section" id="problem-solution">
+                        <div style="text-align: center; margin-bottom: 60px;">
+                            <div class="rich-section-title-box">
+                                <p>DISCOVER</p>
+                            </div>
+                            <h2 class="rich-h2">Problem & Solution</h2>
+                            <p class="rich-p-large" style="margin: 0 auto;">Understanding the challenges and creating
+                                solutions that truly matter</p>
+                        </div>
+                        <div class="prob-sol-grid">
+                            <div class="rich-card problem">
+                                <div class="card-header">
+                                    <div class="card-line"></div>
+                                    <h3 style="color: var(--accent-red);">The Problem</h3>
+                                </div>
+                                <p style="color: rgba(255,255,255,0.6); line-height: 1.6;">
+                                    In today's smart home market, users often own multiple devices from different
+                                    brands, each requiring its own app to control. This creates confusion,
+                                    inconsistency, and frustration.
+                                </p>
+                                <ul class="bullet-list" style="color: rgba(255,255,255,0.7);">
+                                    <li class="bullet-item"><span class="bullet-dot">•</span> Too many apps for
+                                        different devices</li>
+                                    <li class="bullet-item"><span class="bullet-dot">•</span> Inconsistent design and
+                                        controls</li>
+                                    <li class="bullet-item"><span class="bullet-dot">•</span> Time-consuming to switch
+                                        between apps</li>
+                                    <li class="bullet-item"><span class="bullet-dot">•</span> No unified dashboard for
+                                        quick access</li>
+                                    <li class="bullet-item"><span class="bullet-dot">•</span> Limited cross-brand
+                                        compatibility</li>
+                                </ul>
+                            </div>
+                            <div class="rich-card solution">
+                                <div class="card-header">
+                                    <div class="card-line"></div>
+                                    <h3 style="color: var(--success-green);">The Solution</h3>
+                                </div>
+                                <p style="color: rgba(255,255,255,0.6); line-height: 1.6;">
+                                    SyncHaus brings all smart devices together in one universal app, offering a seamless
+                                    and consistent experience across all your home systems.
+                                </p>
+                                <ul class="bullet-list" style="color: rgba(255,255,255,0.7);">
+                                    <li class="bullet-item"><span class="bullet-dot">•</span> One central app for all
+                                        smart devices</li>
+                                    <li class="bullet-item"><span class="bullet-dot">•</span> Compatible with multiple
+                                        brands</li>
+                                    <li class="bullet-item"><span class="bullet-dot">•</span> Unified dashboard for
+                                        monitoring</li>
+                                    <li class="bullet-item"><span class="bullet-dot">•</span> Real-time device feedback
+                                    </li>
+                                    <li class="bullet-item"><span class="bullet-dot">•</span> Simple setup with clear
+                                        navigation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- STRATEGY SECTION -->
+                    <section class="rich-section" id="strategy">
+                        <div style="text-align: center; margin-bottom: 60px;">
+                            <div class="rich-section-title-box">
+                                <p>STRATEGY</p>
+                            </div>
+                            <h2 class="rich-h2">Design Strategy</h2>
+                        </div>
+                        <div class="strategy-grid">
+                            <div class="strategy-card" style="border-color: rgba(79, 107, 231, 0.3);">
+                                <div style="display: flex; gap: 15px; align-items: center; margin-bottom: 20px;">
+                                    <div style="width: 4px; height: 32px; background: #4F6BE7; border-radius: 4px;">
+                                    </div>
+                                    <i data-lucide="lightbulb" style="color: #4F6BE7; width: 28px; height: 28px;"></i>
+                                </div>
+                                <h3 style="color: white; margin-bottom: 15px; font-size: 22px;">Intention</h3>
+                                <p style="color: rgba(255,255,255,0.6); font-size: 15px; line-height: 1.6;">
+                                    To design a universal smart home platform that lets users control all their
+                                    connected devices — no matter the brand — in one unified app.
+                                </p>
+                            </div>
+                            <div class="strategy-card" style="border-color: rgba(0, 196, 140, 0.3);">
+                                <div style="display: flex; gap: 15px; align-items: center; margin-bottom: 20px;">
+                                    <div style="width: 4px; height: 32px; background: #00C48C; border-radius: 4px;">
+                                    </div>
+                                    <i data-lucide="users" style="color: #00C48C; width: 28px; height: 28px;"></i>
+                                </div>
+                                <h3 style="color: white; margin-bottom: 15px; font-size: 22px;">Target User</h3>
+                                <p style="color: rgba(255,255,255,0.6); font-size: 15px; line-height: 1.6;">
+                                    Homeowners or renters with multiple smart devices from different brands who seek a
+                                    single app to manage them all.
+                                </p>
+                            </div>
+                            <div class="strategy-card" style="border-color: rgba(254, 207, 41, 0.3);">
+                                <div style="display: flex; gap: 15px; align-items: center; margin-bottom: 20px;">
+                                    <div style="width: 4px; height: 32px; background: #FECF29; border-radius: 4px;">
+                                    </div>
+                                    <i data-lucide="cog" style="color: #FECF29; width: 28px; height: 28px;"></i>
+                                </div>
+                                <h3 style="color: white; margin-bottom: 15px; font-size: 22px;">Tech Constraint</h3>
+                                <p style="color: rgba(255,255,255,0.6); font-size: 15px; line-height: 1.6;">
+                                    Ensuring stable connectivity and compatibility across various brands via multi-brand
+                                    API integration and OS differences.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- USER PERSONA -->
+                    <section class="rich-section" id="persona">
+                        <div style="text-align: center; margin-bottom: 60px;">
+                            <div class="rich-section-title-box"
+                                style="background: rgba(254, 207, 41, 0.1); border-color: rgba(254, 207, 41, 0.2);">
+                                <p style="color: #FECF29;">DEFINE</p>
+                            </div>
+                            <h2 class="rich-h2">User Persona</h2>
+                            <p class="rich-p-large" style="margin: 0 auto;">Meet Alex Turner — our primary user persona
+                            </p>
+                        </div>
+                        <div class="persona-grid">
+                            <div class="persona-profile">
+                                <img src="../assets/case-studies/synchaus/synchaus-persona.png" alt="Alex Turner"
+                                    class="persona-img">
+                                <div class="persona-details">
+                                    <div class="persona-info-row">
+                                        <i data-lucide="user" size="18"></i>
+                                        <div>
+                                            <p
+                                                style="font-size: 10px; color: rgba(255,255,255,0.4); text-transform: uppercase;">
+                                                Name</p>
+                                            <p style="font-weight: 600; color: white;">Alex Turner</p>
+                                        </div>
+                                    </div>
+                                    <div class="persona-info-row">
+                                        <i data-lucide="calendar" size="18"></i>
+                                        <div>
+                                            <p
+                                                style="font-size: 10px; color: rgba(255,255,255,0.4); text-transform: uppercase;">
+                                                Age</p>
+                                            <p style="font-weight: 600; color: white;">33 years old</p>
+                                        </div>
+                                    </div>
+                                    <div class="persona-info-row">
+                                        <i data-lucide="briefcase" size="18"></i>
+                                        <div>
+                                            <p
+                                                style="font-size: 10px; color: rgba(255,255,255,0.4); text-transform: uppercase;">
+                                                Job</p>
+                                            <p style="font-weight: 600; color: white;">Product Manager</p>
+                                        </div>
+                                    </div>
+                                    <hr
+                                        style="border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px 0;">
+                                    <p style="font-style: italic; color: rgba(255,255,255,0.8); font-size: 14px;">"I
+                                        just want one app to control all my smart devices — not five different ones."
+                                    </p>
+                                </div>
+                            </div>
+                            <div style="display: flex; flex-direction: column; gap: 24px;">
+                                <div class="rich-card" style="padding: 30px;">
+                                    <h4
+                                        style="color: white; font-size: 20px; margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                                        <div
+                                            style="width: 4px; height: 24px; background: var(--primary-blue); border-radius: 2px;">
+                                        </div>
+                                        About
+                                    </h4>
+                                    <p style="color: rgba(255,255,255,0.6); line-height: 1.6;">
+                                        Alex is a busy professional living in an urban apartment equipped with multiple
+                                        smart devices. While he enjoys using smart tech, managing them through separate
+                                        apps has become frustrating and time-consuming.
+                                    </p>
+                                </div>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+                                    <div class="rich-card" style="padding: 30px; border-color: rgba(0, 196, 140, 0.2);">
+                                        <h4 style="color: var(--success-green); font-size: 20px; margin-bottom: 15px;">
+                                            Goals</h4>
+                                        <ul style="list-style: none; color: rgba(255,255,255,0.7); font-size: 14px; ">
+                                            <li style="margin-bottom: 8px;">• Unified app management</li>
+                                            <li style="margin-bottom: 8px;">• Time-saving control</li>
+                                            <li style="margin-bottom: 8px;">• Consistent interface</li>
+                                        </ul>
+                                    </div>
+                                    <div class="rich-card" style="padding: 30px; border-color: rgba(255, 61, 61, 0.2);">
+                                        <h4 style="color: var(--accent-red); font-size: 20px; margin-bottom: 15px;">
+                                            Frustrations</h4>
+                                        <ul style="list-style: none; color: rgba(255,255,255,0.7); font-size: 14px;">
+                                            <li style="margin-bottom: 8px;">• App-switching fatigue</li>
+                                            <li style="margin-bottom: 8px;">• Disconnected devices</li>
+                                            <li style="margin-bottom: 8px;">• Complex setup process</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- PROCESS SECTION -->
+                    <section class="rich-section" id="process">
+                        <div style="text-align: center; margin-bottom: 60px;">
+                            <div class="rich-section-title-box">
+                                <p>PROCESS</p>
+                            </div>
+                            <h2 class="rich-h2">Design Process</h2>
+                        </div>
+                        <div class="timeline-box">
+                            <h4
+                                style="color: white; font-size: 22px; margin-bottom: 24px; display: flex; align-items: center; gap: 12px;">
+                                <div
+                                    style="width: 4px; height: 28px; background: var(--primary-blue); border-radius: 4px;">
+                                </div>
+                                Design Timeline
+                            </h4>
+                            <div style="display: flex; flex-direction: column; gap: 32px;">
+                                <!-- Timeline Item -->
+                                <div style="display: grid; grid-template-columns: 150px 1fr; gap: 20px;">
+                                    <div style="color: rgba(255,255,255,0.4); font-family: monospace;">SEP - W01</div>
+                                    <div>
+                                        <h5 style="color: var(--primary-blue); font-size: 18px; margin-bottom: 10px;">
+                                            Ideation</h5>
+                                        <p style="color: rgba(255,255,255,0.6);">Concept brainstorming, problem
+                                            definition, and initial sketches.</p>
+                                    </div>
+                                </div>
+                                <div style="display: grid; grid-template-columns: 150px 1fr; gap: 20px;">
+                                    <div style="color: rgba(255,255,255,0.4); font-family: monospace;">SEP - W02</div>
+                                    <div>
+                                        <h5 style="color: var(--success-green); font-size: 18px; margin-bottom: 10px;">
+                                            Research & Wireframe</h5>
+                                        <p style="color: rgba(255,255,255,0.6);">Market analysis, user journey mapping,
+                                            and low-fidelity prototypes.</p>
+                                    </div>
+                                </div>
+                                <div style="display: grid; grid-template-columns: 150px 1fr; gap: 20px;">
+                                    <div style="color: rgba(255,255,255,0.4); font-family: monospace;">SEP - W03</div>
+                                    <div>
+                                        <h5 style="color: var(--primary-blue); font-size: 18px; margin-bottom: 10px;">
+                                            Hi-fi Design</h5>
+                                        <p style="color: rgba(255,255,255,0.6);">Brand identity, UI documentation, and
+                                            building the design system.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- STYLE GUIDE -->
+                    <section class="rich-section" id="style-guide">
+                        <div style="text-align: center; margin-bottom: 60px;">
+                            <div class="rich-section-title-box">
+                                <p>DESIGN SYSTEM</p>
+                            </div>
+                            <h2 class="rich-h2">Style Guide</h2>
+                        </div>
+                        <div class="rich-card" style="margin-bottom: 32px;">
+                            <h4 style="color: white; font-size: 22px; margin-bottom: 30px;">Color Palette</h4>
+                            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+                                <div style="text-align: center;">
+                                    <div
+                                        style="width: 80px; height: 80px; background: #4E6AE7; border-radius: 50%; margin: 0 auto 15px; border: 4px solid #111; box-shadow: 0 10px 20px rgba(0,0,0,0.5);">
+                                    </div>
+                                    <p style="color: white; font-weight: 600; font-size: 14px;">Primary</p>
+                                    <p style="color: rgba(255,255,255,0.4); font-size: 12px;">#4E6AE7</p>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div
+                                        style="width: 80px; height: 80px; background: #354050; border-radius: 50%; margin: 0 auto 15px; border: 4px solid #111; box-shadow: 0 10px 20px rgba(0,0,0,0.5);">
+                                    </div>
+                                    <p style="color: white; font-weight: 600; font-size: 14px;">Secondary</p>
+                                    <p style="color: rgba(255,255,255,0.4); font-size: 12px;">#354050</p>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div
+                                        style="width: 80px; height: 80px; background: #BE1A1E; border-radius: 50%; margin: 0 auto 15px; border: 4px solid #111; box-shadow: 0 10px 20px rgba(0,0,0,0.5);">
+                                    </div>
+                                    <p style="color: white; font-weight: 600; font-size: 14px;">Accent</p>
+                                    <p style="color: rgba(255,255,255,0.4); font-size: 12px;">#BE1A1E</p>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div
+                                        style="width: 80px; height: 80px; background: #FFFFFF; border-radius: 50%; margin: 0 auto 15px; border: 4px solid #111; box-shadow: 0 10px 20px rgba(0,0,0,0.5);">
+                                    </div>
+                                    <p style="color: white; font-weight: 600; font-size: 14px;">White</p>
+                                    <p style="color: rgba(255,255,255,0.4); font-size: 12px;">#FFFFFF</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+                            <div class="rich-card">
+                                <h4
+                                    style="font-family: 'Kodchasan'; font-size: 32px; color: white; margin-bottom: 20px;">
+                                    Kodchasan</h4>
+                                <p style="color: rgba(255,255,255,0.5); font-size: 14px; line-height: 1.6;">
+                                    Used for headings and key branding elements. Its geometric yet soft rounded
+                                    terminals give it a futuristic yet approachable feel.
+                                </p>
+                            </div>
+                            <div class="rich-card">
+                                <h4 style="font-family: 'Inter'; font-size: 32px; color: white; margin-bottom: 20px;">
+                                    Inter</h4>
+                                <p style="color: rgba(255,255,255,0.5); font-size: 14px; line-height: 1.6;">
+                                    Used for body text and interface elements. Highly legible and clean, perfect for
+                                    data-rich smart home controls.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- FINAL THOUGHTS -->
+                    <section class="rich-section" style="text-align: center; padding-bottom: 100px;">
+                        <div
+                            style="background: linear-gradient(to right, transparent, rgba(78, 107, 231, 0.05), transparent); padding: 60px; border-radius: 40px;">
+                            <h2 class="rich-h2">Final Result</h2>
+                            <p class="rich-p-large" style="margin: 0 auto 40px;">
+                                SyncHaus successfully simplifies the smart home experience by merging multiple device
+                                ecosystems into a single, intuitive interface.
+                            </p>
+                            <a href="../index.html#portfolio" class="form-btn"
+                                style="display: inline-flex; padding: 15px 40px; border-radius: 12px; font-weight: 600;">View
+                                More Projects</a>
+                        </div>
+                    </section>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </main>
+
+    <!-- CUSTOM JS -->
+    <script src="../assets/js/script.js"></script>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
+
+    <!-- ICONS -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
