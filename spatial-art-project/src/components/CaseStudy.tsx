@@ -98,7 +98,7 @@ export default function CaseStudy() {
               {/* QR Code */}
               <div className="bg-white p-4 rounded-xl">
                 <img 
-                  src="/imports/Screenshot_2026-03-24_185808.png" 
+                  src="./imports/Screenshot_2026-03-24_185808.png" 
                   alt="QR Code to Spatial Art Gallery" 
                   className="w-52 h-52 object-cover"
                 />
