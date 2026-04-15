@@ -29,7 +29,7 @@ export default function GalleryShowcase() {
               </div>
               <div className="aspect-[9/16] max-w-[280px] mx-auto bg-gradient-to-br from-[#1A1613] to-[#2A2420] rounded-3xl border-4 border-white/20 shadow-2xl flex items-center justify-center overflow-hidden">
                 <img 
-                  src="/imports/IMG_3059.jpeg" 
+                  src="./imports/IMG_3059.jpeg" 
                   alt="Gallery Feed Mobile" 
                   className="w-full h-full object-cover"
                 />
@@ -58,7 +58,7 @@ export default function GalleryShowcase() {
               </div>
               <div className="aspect-[16/9] w-full bg-gradient-to-br from-[#1A1613] to-[#2A2420] rounded-2xl border-4 border-white/20 shadow-2xl flex items-center justify-center overflow-hidden">
                 <img 
-                  src="/imports/image-1.png" 
+                  src="./imports/image-1.png" 
                   alt="Gallery Feed" 
                   className="w-full h-full object-cover"
                 />
@@ -102,7 +102,7 @@ export default function GalleryShowcase() {
               </div>
               <div className="aspect-[9/16] max-w-[280px] mx-auto bg-gradient-to-br from-[#1A1613] to-[#2A2420] rounded-3xl border-4 border-white/20 shadow-2xl flex items-center justify-center overflow-hidden">
                 <img 
-                  src="/imports/IMG_3060.jpeg" 
+                  src="./imports/IMG_3060.jpeg" 
                   alt="Search Page Mobile" 
                   className="w-full h-full object-cover"
                 />
@@ -131,7 +131,7 @@ export default function GalleryShowcase() {
               </div>
               <div className="aspect-[16/9] w-full bg-gradient-to-br from-[#1A1613] to-[#2A2420] rounded-2xl border-4 border-white/20 shadow-2xl flex items-center justify-center overflow-hidden">
                 <img 
-                  src="/imports/image-2.png" 
+                  src="./imports/image-2.png" 
                   alt="Search Page" 
                   className="w-full h-full object-cover"
                 />
@@ -175,7 +175,7 @@ export default function GalleryShowcase() {
               </div>
               <div className="aspect-[9/16] max-w-[280px] mx-auto bg-gradient-to-br from-[#1A1613] to-[#2A2420] rounded-3xl border-4 border-white/20 shadow-2xl flex items-center justify-center overflow-hidden">
                 <img 
-                  src="/imports/IMG_3061.jpeg" 
+                  src="./imports/IMG_3061.jpeg" 
                   alt="Saved Page Mobile" 
                   className="w-full h-full object-cover"
                 />
@@ -204,7 +204,7 @@ export default function GalleryShowcase() {
               </div>
               <div className="aspect-[16/9] w-full bg-gradient-to-br from-[#1A1613] to-[#2A2420] rounded-2xl border-4 border-white/20 shadow-2xl flex items-center justify-center overflow-hidden">
                 <img 
-                  src="/imports/image-3.png" 
+                  src="./imports/image-3.png" 
                   alt="Saved Page" 
                   className="w-full h-full object-cover"
                 />
@@ -248,7 +248,7 @@ export default function GalleryShowcase() {
               </div>
               <div className="aspect-[9/16] max-w-[280px] mx-auto bg-gradient-to-br from-[#1A1613] to-[#2A2420] rounded-3xl border-4 border-white/20 shadow-2xl flex items-center justify-center overflow-hidden">
                 <img 
-                  src="/imports/IMG_3063.jpeg" 
+                  src="./imports/IMG_3063.jpeg" 
                   alt="Artwork Detail Mobile" 
                   className="w-full h-full object-cover"
                 />
@@ -281,7 +281,7 @@ export default function GalleryShowcase() {
               </div>
               <div className="aspect-[16/9] w-full bg-gradient-to-br from-[#1A1613] to-[#2A2420] rounded-2xl border-4 border-white/20 shadow-2xl flex items-center justify-center overflow-hidden">
                 <img 
-                  src="/imports/20260413-2204-03.9358950.gif" 
+                  src="./imports/20260413-2204-03.9358950.gif" 
                   alt="Artwork Detail" 
                   className="w-full h-full object-cover"
                 />
@@ -329,7 +329,7 @@ export default function GalleryShowcase() {
               </div>
               <div className="aspect-[9/16] max-w-[280px] mx-auto bg-gradient-to-br from-[#1A1613] to-[#2A2420] rounded-3xl border-4 border-white/20 shadow-2xl flex items-center justify-center overflow-hidden">
                 <img 
-                  src="/imports/IMG_3062.jpeg" 
+                  src="./imports/IMG_3062.jpeg" 
                   alt="Profile Page Mobile" 
                   className="w-full h-full object-cover"
                 />
@@ -358,7 +358,7 @@ export default function GalleryShowcase() {
               </div>
               <div className="aspect-[16/9] w-full bg-gradient-to-br from-[#1A1613] to-[#2A2420] rounded-2xl border-4 border-white/20 shadow-2xl flex items-center justify-center overflow-hidden">
                 <img 
-                  src="/imports/image-5.png" 
+                  src="./imports/image-5.png" 
                   alt="Profile Page" 
                   className="w-full h-full object-cover"
                 />

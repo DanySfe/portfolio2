@@ -14,7 +14,7 @@ export default function PersonaSection() {
           <div className="md:col-span-1">
             <div className="w-48 h-48 rounded-2xl bg-gradient-to-br from-[#C2A572]/20 to-[#C2A572]/5 border border-[#C2A572]/30 mx-auto mb-4 flex items-center justify-center overflow-hidden">
               <img 
-                src="/imports/image.png" 
+                src="./imports/image.png" 
                 alt="Sophie Chen - User Persona" 
                 className="w-full h-full object-cover"
               />
